@@ -1,95 +1,55 @@
-# Task Manager Web Application
-
-A **Task Manager** built with **Next.js** and **Firebase** for managing personal tasks. Users can add, edit, delete, and filter tasks with a seamless and responsive user experience. Authentication and real-time database synchronization are powered by Firebase.
-
----
-
+# Task Dashboard Application
+## Overview
+The Task Dashboard is a dynamic and responsive web application designed to help users manage tasks efficiently. With features such as task addition, editing, deletion, filtering, and persistent storage using localStorage, this application ensures an intuitive and effective task management experience. Authentication powered by Firebase.
 ## Features
-
-1. **User Authentication**:
-   - Sign up and log in with Firebase Authentication.
-
-2. **Task Management**:
-   - Add new tasks with a title and description.
-   - Edit or delete existing tasks.
-
-3. **Search Functionality**:
-   - Filter tasks dynamically by title or description using a search bar.
-
-4. **Real-Time Updates**:
-   - Data is synchronized in real time using Firebase Firestore.
-
-5. **Responsive Design**:
-   - Optimized for all devices (mobile, tablet, and desktop).
-
----
-
+1. User Authentication:
+   - Displays user details such as profile picture and name (fetched from an authentication provider).
+2. Task Management:
+   - Add, edit, delete tasks.
+   - Mark tasks as complete or pending.
+   - Assign due dates to tasks.
+3. Search and Filter:
+   - Search tasks by title or description.
+   - Filter tasks based on their status: All, Completed, Pending, or Overdue.
+4. Persistence:
+   - Tasks are saved in localStorage and automatically loaded upon page refresh.
+6. Responsive Design:
+   - Fully responsive layout for seamless usage across devices.
 ## Tech Stack
-
-- **Frontend**: React.js (via Next.js)
-- **Backend**: Firebase Firestore (NoSQL Database)
-- **Authentication**: Firebase Authentication
-- **Styling**: Tailwind CSS
-- **State Management**: React Hooks
-
----
-
-## Getting Started
-
+### Frontend:
+- Next.js: Core framework for building the UI.
+- Redux Toolkit: State management.
+- TailwindCSS: Styling framework for a responsive and modern UI.
+### Backend:
+- localStorage: Used for storing tasks persistently on the client side.
+### Additional Libraries:
+- AuthContext: Custom context for handling user authentication.
+## Installation and Setup
 ### Prerequisites
-
-- **Node.js** (v14 or above)
-- **Firebase Account**
-
-### Installation
-
-1. Clone the repository:
+- Node.js and npm installed on your machine.
+### Steps
+1. Clone the Repository:
    ```bash
-   git clone https://github.com/Diparya/task-manager-firebase
-   cd task-manager-firebase
-2. Install dependencies:
-    ```bash
-    npm install
-3. Create a **.env.local** file in the root directory with the    following Firebase configuration:
-    ```bash
-    NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
-    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-firebase-project-id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-4. Set up Firebase Firestore:
-- Go to the Firebase Console.
-- Create a Firestore database.
-- Add a tasks collection with fields title, description, userId, and createdAt.
-5. Start the development server:
-    ```bash
-    npm run dev
-Open your browser and navigate to http://localhost:3000.
+   git clone https://github.com/Diparya/advanced-todo 
+   cd advanced-todo 
+2. Install Dependencies:
+   ```bash
+   npm install
+3. Run the Application:
+   ```bash
+   npm run dev
+The app will run locally, typically accessible at http://localhost:3000/.
 
 ## Usage
-1. **Log In**: Use Firebase Authentication to sign in or create an account.
-2. **Add Tasks**: Enter a title and description to add a new task.
-3. **Edit/Delete Tasks**: Use the provided buttons to edit or delete tasks.
-4. **Search**: Use the search bar to filter tasks by title or description.
-
-## Future Improvements
-- Add task due dates and priorities.
-- Implement drag-and-drop task sorting.
-- Introduce project categories and tags.
-- Add dark mode for the UI.
-
-## Folder Structure
-  ```bash
-    task-manager-firebase/
-    ├── components/
-    │   ├── Navbar.js          # Navigation bar component
-    │   └── TaskDashboard.js   # Main task manager component
-    ├── utils/
-    │   ├── AuthContext.js     # Firebase authentication context
-    │   └── firebase.js        # Firebase configuration and initialization
-    ├── styles/                # Global CSS or Tailwind configuration
-    ├── pages/                 # Next.js pages
-    └── public/                # Static assets
-
-
+### Adding a Task
+- Enter the task title and optional description in the input fields.
+- Assign a due date using the date picker (if needed).
+- Click Add Task.
+### Editing a Task
+- Click the Edit button on a task.
+- Update the task details in the form.
+- Click Update Task.
+### Deleting a Task
+- Click the Delete button to remove a task permanently.
+### Marking Task Status
+- Use the Mark Complete or Mark Pending button to toggle task status.
